@@ -176,12 +176,19 @@ function pickMystery() {
 
 // // ITERATION 3
 
-function revealMystery(callback) {
-    let {suspect,weapon,room} = callback;
-    return `${suspect.firstName} ${suspect.lastName} killed Mr. Boddy using the ${weapon.name} in the ${room.name}!`
+function revealMystery() {
+//     let {suspect,weapon,room} = callback;
+//     return `${suspect.firstName} ${suspect.lastName} killed Mr. Boddy using the ${weapon.name} in the ${room.name}!`
+let mystery = pickMystery();
+let first = mystery.suspect.firstName;
+let two = mystery.suspect.lastName;
+let three = mystery.weapon.name;
+let four = mystery.room.name;
+return `${first} ${two} killed Mr. Boddy using the ${three} in the ${four}!`
 };
 
-let callback = pickMystery()
-let mysteryReveal = revealMystery(callback)
 
-console.log(mysteryReveal)
+// let callback = pickMystery();
+// let mysteryReveal = revealMystery(callback);
+
+console.log(revealMystery());
